@@ -1,16 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { AppRoutes } from './app.routing';
+import { HeaderComponent } from './header/header.component';
+import { CategoriasListComponent } from './categorias/categorias-list/categorias-list.component';
+import { CategoriaService } from './categorias/categoria.service';
+import { CategoriasDetailComponent } from './categorias/categorias-detail/categorias-detail.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      HeaderComponent,
+      CategoriasListComponent,
+      CategoriasDetailComponent
+   ],
+   imports: [
+      BrowserModule,
+      HttpClientModule,
+      AppRoutes
+   ],
+   providers: [CategoriaService],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }

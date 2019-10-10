@@ -1,0 +1,4 @@
+<div class="collection">
+  <h5>Lista de Categorias</h5>
+  <a [routerLink]="[ '/Categoria', categoria.id]" *ngFor="let categoria of categorias" class="collection-item">Categoria: {{ categoria.description | uppercase }}</a>
+</div>
