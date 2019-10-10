@@ -1,0 +1,41 @@
+/* label color */
+.input-field label {
+    color: #7b1fa2;
+  }
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color: #7b1fa2;
+  }
+
+  .input-field input[type=number]:focus + label {
+    color: #7b1fa2;
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #7b1fa2;
+    box-shadow: 0 1px 0 0 #7b1fa2;
+  }
+
+  .input-field input[type=number]:focus {
+    border-bottom: 1px solid #7b1fa2;
+    box-shadow: 0 1px 0 0 #7b1fa2;
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #7b1fa2;
+    box-shadow: 0 1px 0 0 #7b1fa2;
+  }
+
+  .input-field input[type=number].valid {
+    border-bottom: 1px solid #7b1fa2;
+    box-shadow: 0 1px 0 0 #7b1fa2;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #7b1fa2;
+    box-shadow: 0 1px 0 0 #7b1fa2;
+  }
+  /* icon prefix focus color */
+  .input-field .prefix.active {
+    color: #7b1fa2;
+  }

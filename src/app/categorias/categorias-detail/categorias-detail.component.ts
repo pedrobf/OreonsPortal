@@ -18,7 +18,7 @@ export class CategoriasDetailComponent implements OnInit {
     private service: CategoriaService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.inscricao = this.route.params.subscribe((params: any) => {

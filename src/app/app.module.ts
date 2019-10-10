@@ -8,13 +8,16 @@ import { HeaderComponent } from './header/header.component';
 import { CategoriasListComponent } from './categorias/categorias-list/categorias-list.component';
 import { CategoriaService } from './categorias/categoria.service';
 import { CategoriasDetailComponent } from './categorias/categorias-detail/categorias-detail.component';
+import { CategoriasFormComponent } from './categorias/categorias-form/categorias-form.component';
+
 
 @NgModule({
    declarations: [
       AppComponent,
       HeaderComponent,
       CategoriasListComponent,
-      CategoriasDetailComponent
+      CategoriasDetailComponent,
+      CategoriasFormComponent
    ],
    imports: [
       BrowserModule,
