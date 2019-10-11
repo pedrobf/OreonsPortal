@@ -1,6 +1,37 @@
 <div class="section">
+  <h4 class="title">Categoria</h4>
+  <a (click)="addSubCategory()" class="waves-effect purple darken-2 btn">Adicionar SubCategoria</a>
+  <br>
+  <form #form [formGroup]="categoriaForm">
+    <div class="row">
+      <div class="input-field col s8">
+        <label>Descrição</label>
+        <input type="text" formControlName="description" required="required">
+      </div>
+    </div>
+    <h4>SubCategoria</h4>
+    <div class="section">
+      <div class="row">
+        <label>Descrição</label>
+        <div formArrayName="childrensCategory" *ngFor="let item of categoriaForm.get('childrensCategory').controls; let i = index;">
+          <div class="input-field col s4">
+              <label for="sublevel">Level</label>
+              <input type="number" formControlName="level" required="required" placeholder="Level" min="0">
+              <input formControlName="description" type="text" autocomplete="on" required="required" placeholder="Descrição">
+              <a (click)="removeSubCategory(i)" class="btn waves-effect red">Remover</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+<!-- <div class="section">
   <div class="row">
     <h4 class="title">Categoria</h4>
+    <a (click)="addSubCategory()" class="waves-effect purple darken-2 btn">Adicionar SubCategoria</a>
+    <br>
     <form class="col s12">
       <div class="row">
         <div class="input-field col s8">
@@ -23,4 +54,4 @@
       </button>
     </form>
   </div>
-</div>
+</div> -->
