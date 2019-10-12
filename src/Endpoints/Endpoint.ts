@@ -24,6 +24,6 @@ export class Endpoint {
   }
 
   public static deleteSubCategory(id: string, level: number): string {
-      return `${this.api}categories/${id}/${level}`;
+      return `${this.api}categories/subcategory/${id}/${level}`;
   }
 }

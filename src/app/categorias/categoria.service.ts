@@ -21,7 +21,11 @@ constructor(private http: HttpClient) { }
   }
 
   createCategory(value: any): Observable<any> {
-    return this.http.post(Endpoint.createCategory(), value);
+    if (value.id) {
+      return this.http.put(Endpoint.updateCategory(value.id), value, { observe: 'response'})
+    } else {
+      return this.http.post(Endpoint.createCategory(), value, { observe: 'response' });
+    }
   }
 
   updateCategory(value: any): Observable<any> {
@@ -29,10 +33,10 @@ constructor(private http: HttpClient) { }
   }
 
   deleteCategory(id: string): Observable<any> {
-    return this.http.delete(Endpoint.deleteCategory(id));
+    return this.http.delete(Endpoint.deleteCategory(id), { observe: 'response' });
   }
 
   deleteSubCategory(id: string, level: number): Observable<any> {
-    return this.http.delete(Endpoint.deleteSubCategory(id, level));
+    return this.http.delete(Endpoint.deleteSubCategory(id, level), { observe: 'response' });
   }
 }

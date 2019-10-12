@@ -1,6 +1,6 @@
 <div class="collection">
   <h5>Lista de Categorias</h5>
   <button [routerLink]="[ '/Categorias/Nova' ]" class="waves-effect purple darken-2 btn">Adcionar Categoria</button>
-  <a [routerLink]="[ '/Categoria', categoria.id]" *ngFor="let categoria of categorias"
+  <a style="margin-top: 10px;" [routerLink]="[ '/Categoria', categoria.id]" *ngFor="let categoria of categorias"
     class="collection-item">Categoria: {{ categoria.description | uppercase }}</a>
 </div>

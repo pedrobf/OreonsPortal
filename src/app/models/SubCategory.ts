@@ -3,7 +3,8 @@ export class SubCategory {
     description: string;
     level: number;
 
-    constructor(level?: number, description: string = null) {
+    constructor(id:string = null, level: number, description: string = null) {
+        this.id = id;
         this.level = level;
         this.description = description;
     }

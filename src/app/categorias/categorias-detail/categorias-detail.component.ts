@@ -32,7 +32,20 @@ export class CategoriasDetailComponent implements OnInit {
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.inscricao.unsubscribe();
+  }
+
+  deleteCategory(): void {
+    let id = this.route.params.subscribe((params: any) => {
+      return this.id = params['id'];
+    });
+    this.service.deleteCategory(this.id).subscribe(
+      response => {
+        if (response.status === 200) {
+          this.router.navigate(['/Categorias']);
+        }
+      }
+    )
   }
 }

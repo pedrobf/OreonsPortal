@@ -5,7 +5,8 @@ export class Category {
     description: string;
     childrensCategory: SubCategory[];
 
-    constructor(description: string = null) {
+    constructor(id: string = null, description: string = null) {
+        this.id = id;
         this.description = description;
     }
 }

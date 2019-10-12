@@ -2,5 +2,8 @@
   <li class="collection-header">
     <h4>Descrição: {{ categoria?.description }}</h4>
   </li>
-  <li class="collection-item" *ngFor="let cat of categoria.childrensCategory"> SubCategoria Nivel: {{ cat?.level }} - Descrição: {{ cat?.description | uppercase }}</li>
+  <li class="collection-item" *ngFor="let cat of categoria?.childrensCategory"> SubCategoria Nivel: {{ cat?.level }} - Descrição: {{ cat?.description | uppercase }}</li>
 </ul>
+<button class="btn waves-effect grey" [routerLink]="[ '/Categorias' ]">Voltar</button>
+<button style="margin-left: 10px;" class="btn waves-effect purple darken-2" [routerLink]="[ '/Categorias/Nova' ]" [queryParams]="{ id: categoria.id}">Editar</button>
+<button style="margin-left: 10px;" class="btn waves-effect red" (click)="deleteCategory(categoria.id)">Deletar</button>

@@ -2,29 +2,34 @@
   <h4 class="title">Categoria</h4>
   <a (click)="addSubCategory()" class="waves-effect purple darken-2 btn">Adicionar SubCategoria</a>
   <br>
-  <form #form [formGroup]="categoriaForm">
+  <form #form [formGroup]="categoriaForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="input-field col s8">
-        <label>Descrição</label>
-        <input type="text" formControlName="description" required="required">
+        <!-- <label class="active">Descrição</label> -->
+        <input type="text" formControlName="description" required="required" placeholder="Descrição">
       </div>
     </div>
     <h4>SubCategoria</h4>
     <div class="section">
       <div class="row">
-        <label>Descrição</label>
-        <div formArrayName="childrensCategory" *ngFor="let item of categoriaForm.get('childrensCategory').controls; let i = index;">
-          <div class="input-field col s4">
-              <label for="sublevel">Level</label>
-              <input type="number" formControlName="level" required="required" placeholder="Level" min="0">
-              <input formControlName="description" type="text" autocomplete="on" required="required" placeholder="Descrição">
-              <a (click)="removeSubCategory(i)" class="btn waves-effect red">Remover</a>
+        <!-- <label>Descrição</label> -->
+        <div formArrayName="childrensCategory"
+          *ngFor="let item of categoriaForm.get('childrensCategory').controls; let i = index;">
+          <div class="input-field col s4" [formGroupName]="i">
+            <!-- <label class="col-form-label">Level</label> -->
+            <input #level formControlName="level" required="required" type="number" placeholder="Level" min="1">
+            <input formControlName="description" type="text" autocomplete="on" required="required"
+              placeholder="Descrição">
+            <a (click)="removeSubCategory(i, id, level.value)" class="btn waves-effect red">Remover</a>
           </div>
         </div>
       </div>
     </div>
+    <div class="row">
+      <button type="submit" class="btn waves-effect purple darken-2">Cadastrar</button>
+      <button style="margin-left: 10px;" class="btn waves-effect grey" [routerLink]="[ '/Categorias' ]">Cancelar</button>
+    </div>
   </form>
-
 </div>
 
 <!-- <div class="section">
