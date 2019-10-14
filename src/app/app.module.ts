@@ -8,9 +8,10 @@ import { AppRoutes } from './app.routing';
 import { HeaderComponent } from './header/header.component';
 import { CategoriasListComponent } from './categorias/categorias-list/categorias-list.component';
 import { CategoriaService } from './categorias/categoria.service';
+import { ProdutoService } from './produtos/produto.service';
 import { CategoriasDetailComponent } from './categorias/categorias-detail/categorias-detail.component';
 import { CategoriasFormComponent } from './categorias/categorias-form/categorias-form.component';
-
+import { ProdutosListComponent } from './produtos/produtos-list/produtos-list.component';
 
 @NgModule({
    declarations: [
@@ -18,7 +19,8 @@ import { CategoriasFormComponent } from './categorias/categorias-form/categorias
       HeaderComponent,
       CategoriasListComponent,
       CategoriasDetailComponent,
-      CategoriasFormComponent
+      CategoriasFormComponent,
+      ProdutosListComponent
    ],
    imports: [
       BrowserModule,
@@ -27,7 +29,7 @@ import { CategoriasFormComponent } from './categorias/categorias-form/categorias
       ReactiveFormsModule,
       AppRoutes
    ],
-   providers: [CategoriaService],
+   providers: [CategoriaService, ProdutoService],
    bootstrap: [
       AppComponent
    ]

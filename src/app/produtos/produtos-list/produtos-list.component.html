@@ -1,0 +1,22 @@
+<div class="collection">
+  <h5>Lista de Produtos</h5>
+  <!-- <button [routerLink]="[ '/Categorias/Nova' ]" class="waves-effect purple darken-2 btn">Adcionar Categoria</button> -->
+  <table class="striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Categoria</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="products">
+      <tr *ngFor="let produto of products">
+        <td>{{ produto.name | uppercase }}</td>
+        <td>{{ produto.description | uppercase }}</td>
+        <td>{{ produto.sellingPrice }}</td>
+        <td>{{ produto.categoryName | uppercase }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
