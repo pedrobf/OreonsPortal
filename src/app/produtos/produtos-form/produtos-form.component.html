@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="section">
+    <h4 class="title">Produto</h4>
+    <div *ngIf="category.length === 0">
+      <p> Para cadastrar um produto é necessário ter uma categoria cadastrada </p>
+      <a [routerLink]="[ '/Categorias/Nova' ]">Cadastrar Categoria</a>
+    </div>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="input-field col s6">
+        <label>Nome</label>
+        <input type="text" name="name" formControlName="name" required="required" class="input">
+      </div>
+      <div class="input-field col s6">
+        <label>Descrição</label>
+        <input type="text" name="description" formControlName="description" required="required" class="input">
+      </div>
+      <div class="input-field col s4">
+        <label>Preço</label>
+        <input type="number" maxlength="99999" minlength="0" name="sellingPrice" formControlName="sellingPrice"
+          required="required" class="input">
+      </div>
+      <div class="row">
+        <label>Categorias</label>
+        <select class="browser-default" formControlName="categoryId">
+          <option [ngValue]="categoria.id" *ngFor="let categoria of category">{{ categoria.description | uppercase }}</option>
+        </select>
+      </div>
+      <div class="row">
+        <button type="submit" class="btn waves-effect purple darken-2">Cadastrar</button>
+        <button style="margin-left: 10px;" class="btn waves-effect grey"
+          [routerLink]="[ '/Produtos' ]">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

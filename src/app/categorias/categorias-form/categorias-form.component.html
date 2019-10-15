@@ -5,18 +5,15 @@
   <form #form [formGroup]="categoriaForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="input-field col s8">
-        <!-- <label class="active">Descrição</label> -->
         <input type="text" formControlName="description" required="required" placeholder="Descrição">
       </div>
     </div>
     <h4>SubCategoria</h4>
     <div class="section">
       <div class="row">
-        <!-- <label>Descrição</label> -->
         <div formArrayName="childrensCategory"
           *ngFor="let item of categoriaForm.get('childrensCategory').controls; let i = index;">
           <div class="input-field col s4" [formGroupName]="i">
-            <!-- <label class="col-form-label">Level</label> -->
             <input #level formControlName="level" required="required" type="number" placeholder="Level" min="1">
             <input formControlName="description" type="text" autocomplete="on" required="required"
               placeholder="Descrição">
@@ -31,32 +28,3 @@
     </div>
   </form>
 </div>
-
-<!-- <div class="section">
-  <div class="row">
-    <h4 class="title">Categoria</h4>
-    <a (click)="addSubCategory()" class="waves-effect purple darken-2 btn">Adicionar SubCategoria</a>
-    <br>
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s8">
-          <input type="text" id="descricao" class="validate" placeholder="Descrição">
-          <label for="descricao">Descrição</label>
-        </div>
-      </div>
-      <h4 class="title">SubCategorias</h4>
-      <div class="row">
-        <div class="input-field col s2">
-          <input type="number" id="sublevel" class="validate" placeholder="Level">
-          <label for="sublevel">Level</label>
-        </div>
-        <div class="input-field col s6">
-          <input type="text" id="subdescricao" class="validate" placeholder="Descrição">
-          <label for="subdescricao">Descrição</label>
-        </div>
-      </div>
-      <button class="waves-effect purple darken-2 btn" type="submit" name="action">Cadastrar
-      </button>
-    </form>
-  </div>
-</div> -->
