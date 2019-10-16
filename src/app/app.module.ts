@@ -13,6 +13,8 @@ import { CategoriasDetailComponent } from './categorias/categorias-detail/catego
 import { CategoriasFormComponent } from './categorias/categorias-form/categorias-form.component';
 import { ProdutosListComponent } from './produtos/produtos-list/produtos-list.component';
 import { ProdutosFormComponent } from './produtos/produtos-form/produtos-form.component';
+import { ProdutosDetailComponent } from './produtos/produtos-detail/produtos-detail.component';
+
 
 @NgModule({
    declarations: [
@@ -22,7 +24,8 @@ import { ProdutosFormComponent } from './produtos/produtos-form/produtos-form.co
       CategoriasDetailComponent,
       CategoriasFormComponent,
       ProdutosListComponent,
-      ProdutosFormComponent
+      ProdutosFormComponent,
+      ProdutosDetailComponent
    ],
    imports: [
       BrowserModule,

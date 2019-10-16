@@ -7,17 +7,15 @@
     </div>
     <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
       <div class="input-field col s6">
-        <label>Nome</label>
-        <input type="text" name="name" formControlName="name" required="required" class="input">
+        <input type="text" name="name" formControlName="name" required="required" class="input" placeholder="Nome">
       </div>
       <div class="input-field col s6">
-        <label>Descrição</label>
-        <input type="text" name="description" formControlName="description" required="required" class="input">
+        <input type="text" name="description" formControlName="description" required="required" class="input" placeholder="Descrição">
       </div>
+      <label>Preço</label>
       <div class="input-field col s4">
-        <label>Preço</label>
         <input type="number" maxlength="99999" minlength="0" name="sellingPrice" formControlName="sellingPrice"
-          required="required" class="input">
+          required="required" class="input" placeholder="Preço">
       </div>
       <div class="row">
         <label>Categorias</label>

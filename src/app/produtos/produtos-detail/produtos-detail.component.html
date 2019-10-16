@@ -1,0 +1,12 @@
+<h4>Detalhes do Produto:</h4>
+<ul class="collection with-header">
+  <li class="collection-item">Nome: {{ produto?.name | uppercase }}</li>
+  <li class="collection-item">Descrição: {{ produto?.description | uppercase }}</li>
+  <li class="collection-item">Preço: {{ produto.sellingPrice }}</li>
+  <li class="collection-item">Categoria: {{ produto.categoryName | uppercase }}</li>
+  <li class="collection-item">SubCategoria: {{ produto.subCategoryName | uppercase }}</li>
+</ul>
+<button class="btn waves-effect grey" [routerLink]="[ '/Produtos' ]">Voltar</button>
+<button style="margin-left: 10px;" class="btn waves-effect purple darken-2" [routerLink]="[ '/Produtos/Novo' ]"
+  [queryParams]="{ id: produto.id}">Editar</button>
+<button style="margin-left: 10px;" class="btn waves-effect red" (click)="deleteProduct()">Deletar</button>

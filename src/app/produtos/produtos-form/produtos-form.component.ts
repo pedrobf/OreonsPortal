@@ -14,6 +14,7 @@ import { Products } from 'src/app/models/Products';
   styleUrls: ['./produtos-form.component.css']
 })
 export class ProdutosFormComponent implements OnInit {
+  id: string;
   category: Category[] = [];
   products: Products;
   productForm: FormGroup;
@@ -37,6 +38,18 @@ export class ProdutosFormComponent implements OnInit {
       console.log(categories);
       this.category = categories;
     });
+
+    this.route.queryParams.subscribe(params => {
+      if (params.id) {
+        this.id = params.id;
+        this.service.getProduct(params.id).subscribe(product => {
+          this.productForm.controls['name'].setValue(product.name);
+          this.productForm.controls['description'].setValue(product.description);
+          this.productForm.controls['sellingPrice'].setValue(product.sellingPrice);
+          this.productForm.controls['categoryId'].setValue(product.categoryId);
+        })
+      }
+    })
   }
 
   onSubmit(): void {
