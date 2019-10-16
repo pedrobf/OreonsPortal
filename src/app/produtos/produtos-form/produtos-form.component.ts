@@ -35,7 +35,6 @@ export class ProdutosFormComponent implements OnInit {
     });
 
     this.categoriaService.getAllCategories().subscribe(categories => {
-      console.log(categories);
       this.category = categories;
     });
 
@@ -54,11 +53,11 @@ export class ProdutosFormComponent implements OnInit {
 
   onSubmit(): void {
     let product = new Products();
+    product.id = this.id;
     product.name = this.productForm.controls['name'].value;
     product.description = this.productForm.controls['description'].value;
     product.sellingPrice = this.productForm.controls['sellingPrice'].value;
     product.categoryId = this.productForm.controls['categoryId'].value;
-    debugger
     this.service.createProduct(product).subscribe(response => {
       if (response.status === 200) {
         this.router.navigate(['/Produtos']);
